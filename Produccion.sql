@@ -13,14 +13,14 @@ GO
 
 create schema Produccion
 go
-create schema Producto
+create schema Product
 go
 
---Producto
+--Product
 
-create table Producto.Producto
+create table Product.Product
 (
-	idProducto int primary key identity(1,1),
+	idProduct int primary key identity(1,1),
 	idMarca int not null,
 	idModelo int not null,
 	nombre varchar (30) not null,
@@ -34,7 +34,7 @@ CREATE TABLE Produccion.Produccion
 (
 	produc_idProduccion int primary key not null,
 	produc_nameProducion varchar(25) not null,
-	produc_idProducto int FOREIGN KEY REFERENCES Producto.Producto(idProducto),
+	produc_idProduct int FOREIGN KEY REFERENCES Product.Product(idProduct),
 	Produc_Inicio DATE,
 	produc_final DATE
 	--produc_JefeProduccion INT FOREIGN KEY REFERENCES Person.Trabajador(idTrabajador)
@@ -129,10 +129,10 @@ CREATE TABLE Produccion.Detalle
 --Linea
 
 
---CREATE TABLE Producto_Material
+--CREATE TABLE Product_Material
 --(
 --	idProducMaterial INT PRIMARY KEY,
---	idProducto INT FOREIGN KEY REFERENCES Product(idProducto),
+--	idProduct INT FOREIGN KEY REFERENCES Product(idProducto),
 --	idMateriales INT FOREIGN KEY REFERENCES Material(idMateriales)
 --)
 
